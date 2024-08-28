@@ -1,0 +1,81 @@
+.content {
+    margin: 2% 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,22rem);
+    column-gap: 1rem;
+    row-gap: 1rem;
+    justify-content: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 28rem;
+    background-color: cadetblue;
+    padding: 1rem;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px lightcoral;
+}
+
+.card h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    height: 25rem;
+    color: wheat
+}
+
+.card ul {
+    list-style: none;
+    padding: 1%;
+    height: 20rem;
+    color: wheat;
+    padding-left: 2rem;
+}
+
+.card img {
+    display: block;
+    max-width:100%;
+    max-height:100%;
+    width: 14rem;
+    height: 14rem;
+    border-radius: 25px;
+}
+
+.card span {
+    align-self: center;
+}
+
+.card button {
+    width: 30%;
+    height: 1.3rem;
+    margin-right: 1rem;
+    border-radius: 20px;
+    border-style: none;
+    font-weight: bold;
+    background-color: wheat;
+    color:grey;
+}
+
+.card button:hover {
+    scale:1.05;
+    color:black;
+}
+
+.card input {
+    width: 12%;
+    margin-right: 4rem;
+    border-radius: 20px;
+    border-style: none;
+}
+
+.card-checkout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card label {
+    margin-left: 1.8rem;
+    color: wheat;
+}

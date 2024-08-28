@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { render } from 'react-dom';
+import '../styles/card.css';
 
 class Card{
     constructor(id,name,price,img,desc,cat){
@@ -11,9 +13,34 @@ class Card{
     }
 
     render(){
-        return <h1>{this.props.id}</h1>   
+        return(
+            <>
+                <h1>{this.name}</h1>
+                <span><img className='card-image' src={this.img} alt='product image'/></span>
+                <ul>
+                    <li><b>Price:</b> ${this.price}</li>
+                    <li><b>Category:</b> {this.cat}</li>
+                </ul>
+                <div className='card-checkout'>
+                    <label htmlFor={`quantity${this.id}`}>Quantity:&emsp;</label>
+                    <input type='number' min='0' max='100' id={`quantity${this.id}`} defaultValue={0}></input>
+                    <button>Add to cart</button>
+                </div>
+                
+            </>
+        );   
     }
     
+}
+
+function DisplayCards(props){
+    const renderedOutput = props.Array.map(item => <div className='card' key={item.id}>{item.render()}</div>);
+  
+      return (
+        <>
+          {renderedOutput}
+        </>
+      );
 }
 
 const createArray = (productDetails)=>{
@@ -48,9 +75,8 @@ const CardArray = ()=>{
     
     return (
         (productDetails && (
-        <div>
-            
-            <p>{array[2].name}</p>
+        <div className='content'>
+            <DisplayCards Array={array} />
         </div>
         )) || <h1>Loading...</h1>
     );

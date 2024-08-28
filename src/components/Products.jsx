@@ -7,7 +7,7 @@ const Products = () => {
 
     return(
         <>
-            <h1>This is products</h1>
+            <h1 style={{paddingLeft:`${5}rem`}}>Shop All</h1>
             <div>{CardArray()}</div>
         </>
     );
